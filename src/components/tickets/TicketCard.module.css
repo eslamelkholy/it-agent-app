@@ -1,0 +1,134 @@
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.badges {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+.statusBadge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.statusNew {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.statusProcessing {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+.statusInProgress {
+  background: #fce4ec;
+  color: #c2185b;
+}
+
+.statusResolved {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.statusClosed {
+  background: #f5f5f5;
+  color: #616161;
+}
+
+.priorityBadge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.priorityLow {
+  background: #f5f5f5;
+  color: #757575;
+}
+
+.priorityMedium {
+  background: #fff8e1;
+  color: #f9a825;
+}
+
+.priorityHigh {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.priorityUrgent {
+  background: #c62828;
+  color: white;
+}
+
+.body {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin-bottom: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.client {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.clientIcon {
+  font-size: 14px;
+}
+
+.ticketId {
+  font-family: monospace;
+  font-size: 11px;
+  background: var(--color-background);
+  padding: 2px 6px;
+  border-radius: 4px;
+}

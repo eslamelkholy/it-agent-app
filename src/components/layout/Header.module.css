@@ -1,0 +1,66 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 64px;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logoIcon {
+  width: 36px;
+  height: 36px;
+  background: var(--color-primary);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.logoText {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.logoText span {
+  color: var(--color-primary);
+}
+
+.clientInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  background: var(--color-background);
+  border-radius: 8px;
+}
+
+.clientName {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.clientBadge {
+  padding: 4px 8px;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
