@@ -7,6 +7,7 @@ import {
 } from 'react';
 import type { Ticket, CreateTicketRequest, TicketFilters, TicketStatus } from '../types';
 import { ticketService } from '../services';
+import { DEMO_CLIENT_ID } from '../constants';
 
 // Context state interface
 interface TicketContextState {
@@ -62,12 +63,13 @@ export const TicketProvider: React.FC<TicketProviderProps> = ({ children }) => {
   const [error, setError] = useState<string | null>(null);
   const [filters, setFiltersState] = useState<TicketFilters>({});
 
-  // Fetch all tickets
+  // Fetch all tickets for the demo client
   const fetchTickets = useCallback(async (newFilters?: TicketFilters) => {
     setIsLoading(true);
     setError(null);
     try {
-      const appliedFilters = newFilters || filters;
+      const baseFilters = newFilters || filters;
+      const appliedFilters = { ...baseFilters, clientId: DEMO_CLIENT_ID };
       const data = await ticketService.getTickets(appliedFilters);
       setTickets(data);
     } catch (err) {

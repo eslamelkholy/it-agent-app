@@ -23,7 +23,7 @@ export const Dashboard: React.FC = () => {
       <div className={styles.header}>
         <h1 className={styles.title}>Dashboard</h1>
         <Link to="/tickets/create" className={styles.createBtn}>
-          <span>➕</span> New Ticket
+          <span className={styles.btnIcon}>+</span> New Ticket
         </Link>
       </div>
 

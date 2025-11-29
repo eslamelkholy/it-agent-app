@@ -2,10 +2,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import type { CreateTicketRequest } from '../../types';
 import { useTickets } from '../../context';
+import { DEMO_CLIENT_ID } from '../../constants';
 import styles from './TicketForm.module.css';
-
-// Demo client ID for Cisco Systems
-const DEMO_CLIENT_ID = '123e4567-e89b-12d3-a456-426614174000';
 
 export const TicketForm: React.FC = () => {
   const navigate = useNavigate();

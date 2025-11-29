@@ -29,7 +29,7 @@ export const TicketListPage: React.FC = () => {
       <div className={styles.header}>
         <h1 className={styles.title}>All Tickets</h1>
         <Link to="/tickets/create" className={styles.createBtn}>
-          <span>➕</span> New Ticket
+          <span className={styles.btnIcon}>+</span> New Ticket
         </Link>
       </div>
 
