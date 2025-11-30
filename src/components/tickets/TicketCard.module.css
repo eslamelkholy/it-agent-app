@@ -1,105 +1,127 @@
 .card {
   background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
-  padding: 16px 20px;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5) var(--space-6);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--color-border);
+  transition: background var(--transition-fast);
 }
 
 .card:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-color: transparent;
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  transform: translateY(-3px);
+}
+
+.card:hover::before {
+  background: var(--color-primary-gradient);
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 12px;
+  margin-bottom: var(--space-3);
+  gap: var(--space-4);
 }
 
 .title {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--color-text-primary);
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
 }
 
 .badges {
   display: flex;
   gap: 8px;
   flex-shrink: 0;
-  margin-left: 12px;
 }
 
 .statusBadge {
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 600;
   text-transform: capitalize;
+  letter-spacing: 0.02em;
 }
 
 .statusNew {
-  background: #e3f2fd;
-  color: #1565c0;
+  background: linear-gradient(135deg, #dbeafe, #eff6ff);
+  color: #2563eb;
 }
 
 .statusProcessing {
-  background: #fff3e0;
-  color: #e65100;
+  background: linear-gradient(135deg, #fef3c7, #fffbeb);
+  color: #d97706;
 }
 
 .statusInProgress {
-  background: #fce4ec;
-  color: #c2185b;
+  background: linear-gradient(135deg, #fce7f3, #fdf2f8);
+  color: #db2777;
 }
 
 .statusResolved {
-  background: #e8f5e9;
-  color: #2e7d32;
+  background: linear-gradient(135deg, #d1fae5, #ecfdf5);
+  color: #059669;
 }
 
 .statusClosed {
-  background: #f5f5f5;
-  color: #616161;
+  background: linear-gradient(135deg, #f1f5f9, #f8fafc);
+  color: #64748b;
 }
 
 .priorityBadge {
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 600;
   text-transform: capitalize;
+  letter-spacing: 0.02em;
 }
 
 .priorityLow {
-  background: #f5f5f5;
-  color: #757575;
+  background: #f1f5f9;
+  color: #64748b;
 }
 
 .priorityMedium {
-  background: #fff8e1;
-  color: #f9a825;
+  background: linear-gradient(135deg, #fef3c7, #fffbeb);
+  color: #b45309;
 }
 
 .priorityHigh {
-  background: #ffebee;
-  color: #c62828;
+  background: linear-gradient(135deg, #fee2e2, #fef2f2);
+  color: #dc2626;
 }
 
 .priorityUrgent {
-  background: #c62828;
+  background: linear-gradient(135deg, #dc2626, #ef4444);
   color: white;
 }
 
 .body {
   font-size: 14px;
   color: var(--color-text-secondary);
-  line-height: 1.5;
-  margin-bottom: 12px;
+  line-height: 1.6;
+  margin-bottom: var(--space-4);
   display: -webkit-box;
   -webkit-line-clamp: 2;
   line-clamp: 2;
@@ -113,20 +135,23 @@
   align-items: center;
   font-size: 12px;
   color: var(--color-text-muted);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border-light);
 }
 
 .client {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .clientIcon {
   font-size: 14px;
+  opacity: 0.7;
 }
 
 .ticketId {
-  font-family: monospace;
+  font-family: 'SF Mono', 'Roboto Mono', monospace;
   font-size: 11px;
   background: var(--color-background);
   padding: 2px 6px;

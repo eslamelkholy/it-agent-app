@@ -1,7 +1,7 @@
 .dashboard {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: var(--space-8);
 }
 
 .header {
@@ -10,100 +10,157 @@
   align-items: center;
 }
 
+.titleSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
 .title {
   font-size: 28px;
   font-weight: 700;
   color: var(--color-text-primary);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--color-text-secondary);
   margin: 0;
 }
 
 .createBtn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   padding: 12px 24px;
   font-size: 14px;
   font-weight: 600;
   border: none;
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   cursor: pointer;
-  background: var(--color-primary);
+  background: var(--color-primary-gradient);
   color: white;
   text-decoration: none;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 4px rgba(79, 70, 229, 0.3);
+  transition: all var(--transition-normal);
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
 }
 
 .createBtn:hover {
-  background: var(--color-primary-dark);
-  box-shadow: 0 4px 8px rgba(79, 70, 229, 0.4);
-  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.45);
+  transform: translateY(-2px);
   text-decoration: none;
+}
+
+.createBtn:active {
+  transform: translateY(0);
 }
 
 .btnIcon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 18px;
-  height: 18px;
-  font-size: 16px;
-  font-weight: 700;
+  width: 20px;
+  height: 20px;
+  font-size: 18px;
+  font-weight: 600;
   color: white;
 }
 
 .stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-5);
 }
 
 .statCard {
   background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
-  padding: 20px;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
   display: flex;
   flex-direction: column;
+  gap: var(--space-2);
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.statCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--color-border);
+  transition: background var(--transition-fast);
+}
+
+.statCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
 .statLabel {
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: 500;
   color: var(--color-text-secondary);
-  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .statValue {
-  font-size: 32px;
+  font-size: 36px;
   font-weight: 700;
   color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.statCard.new::before {
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
 }
 
 .statCard.new .statValue {
-  color: #1565c0;
+  color: #3b82f6;
+}
+
+.statCard.processing::before {
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
 }
 
 .statCard.processing .statValue {
-  color: #e65100;
+  color: #f59e0b;
+}
+
+.statCard.inProgress::before {
+  background: linear-gradient(90deg, #ec4899, #f472b6);
 }
 
 .statCard.inProgress .statValue {
-  color: #c2185b;
+  color: #ec4899;
+}
+
+.statCard.resolved::before {
+  background: linear-gradient(90deg, #10b981, #34d399);
 }
 
 .statCard.resolved .statValue {
-  color: #2e7d32;
+  color: #10b981;
 }
 
 .section {
-  margin-top: 8px;
+  margin-top: var(--space-4);
 }
 
 .sectionHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: var(--space-5);
 }
 
 .sectionTitle {
@@ -111,6 +168,7 @@
   font-weight: 600;
   color: var(--color-text-primary);
   margin: 0;
+  letter-spacing: -0.01em;
 }
 
 .viewAllLink {
@@ -118,8 +176,13 @@
   color: var(--color-primary);
   text-decoration: none;
   font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all var(--transition-fast);
 }
 
 .viewAllLink:hover {
-  text-decoration: underline;
+  gap: 8px;
+  text-decoration: none;
 }

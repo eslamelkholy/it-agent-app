@@ -21,7 +21,10 @@ export const Dashboard: React.FC = () => {
   return (
     <div className={styles.dashboard}>
       <div className={styles.header}>
-        <h1 className={styles.title}>Dashboard</h1>
+        <div className={styles.titleSection}>
+          <h1 className={styles.title}>Dashboard</h1>
+          <p className={styles.subtitle}>Monitor your support tickets and AI automation</p>
+        </div>
         <Link to="/tickets/create" className={styles.createBtn}>
           <span className={styles.btnIcon}>+</span> New Ticket
         </Link>
