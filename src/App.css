@@ -59,6 +59,16 @@
   --space-8: 32px;
   --space-10: 40px;
   --space-12: 48px;
+  
+  /* Spacing aliases used by components */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  
+  /* Gradient */
+  --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
 }
 
 /* Reset */

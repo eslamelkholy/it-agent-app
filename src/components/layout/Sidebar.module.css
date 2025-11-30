@@ -64,8 +64,8 @@
 
 .divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-border), transparent);
-  margin: var(--space-5) var(--space-4);
+  background: var(--color-border);
+  margin: 20px 16px;
 }
 
 .sectionTitle {
